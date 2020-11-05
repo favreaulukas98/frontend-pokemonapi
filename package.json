@@ -1,0 +1,12 @@
+{
+  "name": "sample-front",
+  "version": "1.0.0",
+  "description": "esto constituye el frontend del proyecto pokeapi",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Lucas_Favreau",
+  "license": "ISC"
+}
