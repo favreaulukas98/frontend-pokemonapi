@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample frontend</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Call pokemon</h1>
     
-    <div class="input-component">
-        <input type="text" id="pokemon-name">
-        <label>Error</label>
+    <div class="container-form">
+        <div class="input-component">
+            <input type="text" id="pokemon-name" onkeypress="handleKeyPress(event)">
+            <label class="ocultar" id="label-error"></label>
+        </div>
+        <input type="button" value="Get pokemon" id="get-pokemons" >    
     </div>
-    <input type="button" value="Get pokemon" id="get-pokemons">
-    <div class="" id="img-pokemon"></div>
+
+    <div class="container-img-pokemon">
+        <div class="" id="img-pokemon"></div>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>

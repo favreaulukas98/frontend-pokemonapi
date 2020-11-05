@@ -1,20 +1,28 @@
+function handleKeyPress(e){ 
+    var key=e.keyCode || e.which; 
+    if (key==13){ 
+        retrievePokemon();
+    } 
+} 
 const retrievePokemon = async () => {
     const name = document.getElementById('pokemon-name').value.toLowerCase().trim('');
-    console.time('callPokemon');
     let rawData = {};
-
+    const labelError =  document.getElementById('label-error');
+    labelError.className = 'ocultar';
     if (name) {
         try {
             rawData = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
-            console.log(rawData.data);
+
             displayImage(rawData.data.sprites.front_default);
         } catch (error) {
+            const labelError =  document.getElementById('label-error');
+            labelError.innerHTML = 'Lo ingresado es incorrecto ' + error;
+            labelError.className = 'mostrar';
             console.error(error)
         }
     }
 
 }
-	console.timeEnd('callPokemon');
 
 const showStats = stats => {
 
